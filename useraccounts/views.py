@@ -1,8 +1,12 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.forms import UserCreationForm
-from useraccounts.forms import CreateUserForm
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 import logging
+from useraccounts.forms import CreateUserForm
+from blog.decoraters import my_login_required
+
+
 
 
 # Create your views here.
@@ -22,3 +26,8 @@ def register(request):
         form = CreateUserForm()
     context = {'form' : form}
     return render(request, 'useraccounts/register.html',context)
+
+@login_required
+def profile(request):
+    context = {}
+    return render(request, 'useraccounts/profile.html',context)
