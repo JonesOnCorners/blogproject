@@ -1,0 +1,17 @@
+{% load static %}
+
+<header class="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+        <div class="container">
+        <a class="navbar-brand mr-4"  href="{% url 'index' %}">Blog Practice</a>                
+          <div class="navbar-nav mr-auto">
+              <a class="nav-item nav-link" href="{% url 'index' %}">Home</a>
+              <a class="nav-item nav-link" href="#">About</a>
+          </div>
+          <div class="navbar-nav"> 
+              <a class="nav-item nav-link"  href="#">Login</a>            
+              <a class="nav-item nav-link"  href="{% url 'user-registration' %}">Register</a>
+          </div>
+        </div>
+      </nav>
+    </header>

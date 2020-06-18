@@ -1,0 +1,5 @@
+[client]
+database = blog
+user     = appuser
+password = appuser
+default-character-set = 'utf8'
