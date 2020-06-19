@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf import settings
 from django.contrib import admin
+from django.contrib import messages
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.contrib.auth.views import auth_login, auth_logout, LoginView, LogoutView

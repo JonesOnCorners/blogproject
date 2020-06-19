@@ -1,0 +1,23 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<div class="content-section">
+    <form method="POST"  class="form-group" enctype="multipart/form-data"> 
+        {% csrf_token %}
+        <fieldset class="form-group">
+            {% if request.get_full_path == '/post/create/' %}
+            <legend class="border-bottom mb-4">Create New Post:</legend>
+            {% else %}
+            <legend class="border-bottom mb-4">Update Post:</legend>
+            {% endif %}
+            {{form | crispy }}            
+        </fieldset>
+        <button type="submit" class="btn btn-outline-info">Post</button>
+    </form>    
+</div>
+
+{% endblock content%}
